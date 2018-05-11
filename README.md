@@ -3,8 +3,9 @@ A python tool to reconstruct a gene regulatory network given context-specific ex
 
 ## Pre-request
 1. Install Anaconda based on https://docs.anaconda.com/anaconda/install/
-2. ```bash
-$ pip install progressbar2
+2. Install package progressbar2
+```bash
+    $ pip install progressbar2
 ```
 ## How to use
 ```bash
