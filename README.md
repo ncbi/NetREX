@@ -14,7 +14,7 @@ A python tool to reconstruct a gene regulatory network given context-specific ex
 $ python ./NetREX.py -e express_file -p prior_file 
 
 -e [expression file name] <Required> expression file format is explained below. 
--p [prior file name] (Required) prior network file format is explained below. 
+-p [prior file name] <Required> prior network file format is explained below. 
 ```   
 
 
@@ -22,7 +22,7 @@ $ python ./NetREX.py -e express_file -p prior_file
 ```bash
 $ python ./NetREX.py -e express_file -p prior_file -k 0.6 0.7 0.8 -t 1.2
 -k [a list of percentages] (Optional)"0.6 0.7 0.8" means that NetREX would keep 60%, 70%, and 80% edges in the prior respectively. The final predicted network is the consensus based on networks predicted from those percentages.
--t [a ratio] (Optional)"1.2" means # edges in the output network is 1.2 times to the # edges in the prior network 
+-t [a ratio] (Optional)"1.2" means the number of  edges in the output network is 1.2 times to the edges in the prior network 
 ``` 
 
 
