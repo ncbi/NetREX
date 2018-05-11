@@ -28,7 +28,8 @@ $ python ./NetREX.py -e express_file -p prior_file -k 0.6 0.7 0.8 -t 1.2
 
 
 ## Expression file format
-A Tab sepeated file with the first colomn stroing the gene name. For example:
+A Tab sepeated file with the first colomn stroing the gene names. For example:
+
 | E1 | 0.2508 | 0.2684 | 0.2786 | 0.2878  | ... |
 |----|--------|--------|--------|---------|-----|
 | E2 | 0.3149 | 0.3323 | 0.3427 | 0.3538  | ... |
@@ -39,6 +40,17 @@ A Tab sepeated file with the first colomn stroing the gene name. For example:
 | E7 | 0.2866 | 0.3021 | 0.3105 | 00.3175 | ... |
 
 ## Prior file format
+A Tab sepeated file with the first colomn stroing the gene names and the first row stroing the TF names. For example:
+
+|    | M1  | M2  | M3  |
+|----|-----|-----|-----|
+| E1 | 0.0 | 1.0 | 1.0 |
+| E2 | 1.0 | 1.0 | 1.0 |
+| E3 | 1.0 | 1.0 | 0.0 |
+| E4 | 1.0 | 1.0 | 0.0 |
+| E5 | 1.0 | 1.0 | 1.0 |
+| E6 | 1.0 | 1.0 | 1.0 |
+| E7 | 1.0 | 0.0 | 1.0 |
 
 ## Format of the prior network file for NetREX
 
