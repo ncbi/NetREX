@@ -21,9 +21,14 @@ $ python ./NetREX.py -e express_file -p prior_file
 ### Advanced
 ```bash
 $ python ./NetREX.py -e express_file -p prior_file -k 0.6 0.7 0.8 -t 1.2
+
 -k [a list of percentages] (Optional)"0.6 0.7 0.8" means that NetREX would keep 60%, 70%, and 80% edges in the prior respectively. The final predicted network is the consensus based on networks predicted from those percentages.
 -t [a ratio] (Optional)"1.2" means the number of  edges in the output network is 1.2 times to the edges in the prior network 
 ``` 
+
+## Output of NetREX
+Two files will be outputed: 1) The predicted network with edge pair format; 2) The predicted network with adjacency matrix format.
+
 
 ## Expression file format
 A Tab sepeated file with the first colomn stroing the gene names. For example:
@@ -50,7 +55,7 @@ A Tab sepeated file with the first colomn stroing the gene names and the first r
 | E6 | 1.0 | 1.0 | 1.0 |
 | E7 | 1.0 | 0.0 | 1.0 |
 
-
+## Example of use NetREX
 
 # PriorBoost
 
