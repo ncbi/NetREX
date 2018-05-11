@@ -29,6 +29,13 @@ $ python ./NetREX.py -e express_file -p prior_file -k 0.6 0.7 0.8 -t 1.2
 ## Output of NetREX
 Two files will be outputed: 1) The predicted network with edge pair format; 2) The predicted network with adjacency matrix format.
 
+## Example of use NetREX
+Put NetREX.py and prior.txt and expression.txt in the NexREX_Example_Data folder in the same folder. Then run:
+```bash
+$ python ./NetREX.py -e expression.txt -p prior.txt
+```
+The rank of each edges will be outputed in "NetREX_PredictedEdgeList.txt" and "NetREX_PredictedNetwork.tsv" as shown in this repo.
+
 
 ## Expression file format
 A Tab sepeated file with the first colomn stroing the gene names. For example:
@@ -55,7 +62,7 @@ A Tab sepeated file with the first colomn stroing the gene names and the first r
 | E6 | 1.0 | 1.0 | 1.0 |
 | E7 | 1.0 | 0.0 | 1.0 |
 
-## Example of use NetREX
+
 
 # PriorBoost
 
