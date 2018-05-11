@@ -13,14 +13,12 @@ A python tool to reconstruct a gene regulatory network given context-specific ex
 ```bash
 $ python ./NetREX.py -e express_file -p prior_file 
 ```   
--e [expression file name] the format of the file is explained below. [Expression](#exp-file-format)
+-e [expression file name] the format of the file is explained below. [Expression file format](#exp-file-format)
 
 
-[Foo](#foo)
 
-# Foo
 
-## exp-file-format
+## Expression file format
 
 ## Format of the expression file for NetREX
 
