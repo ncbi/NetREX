@@ -14,6 +14,7 @@ A python tool to reconstruct a gene regulatory network given context-specific ex
 $ python ./NetREX.py -e express_file -p prior_file 
 ```   
 -e [expression file name] [Expression file format](#exp-file-format) is explained below. 
+
 -p [prior file name] [Prior file format](#prior-file-format) is explained below. 
 
 
