@@ -343,7 +343,7 @@ def main():
                          nargs=1,  # expects ≥ 0 arguments
                          metavar = "a_ratio",
                          type=None,
-                         default=1.1,  # 1.1*number of edges in the prior network
+                         default=None,  # 1.1*number of edges in the prior network
                          help = "Control # edges in the final prediction. How to set: http:// ",
                        )
     
@@ -370,30 +370,33 @@ def main():
     EdgeDensity = np.count_nonzero(NetREX_tmp.PriorNet) / (float(NetREX_tmp.NumGene)*NetREX_tmp.NumTF)
     if args.keepedge == None:
         if EdgeDensity > 0.5:
-            NumEdge_Keep = np.arange(0.6,1.,0.1)
+            NumEdge_Keep = np.arange(0.6,0.8,0.1)
         else:
-            NumEdge_Keep = np.arange(0.6,1.,0.1)
+            NumEdge_Keep = np.arange(0.6,0.9,0.1)
     else:
         NumEdge_Keep = args.keepedge
     
     if args.totaledge == None:
         if EdgeDensity > 0.5:
-            NumEdge_Total = 1.0
+            NumEdge_Total = [1.0]
         elif EdgeDensity > 0.05:
-            NumEdge_Total = 1.2
+            NumEdge_Total = [1.2]
         elif EdgeDensity > 0.01:
-            NumEdge_Total = 1.8
+            NumEdge_Total = [1.8]
     else:
         NumEdge_Total = args.totaledge
+#NumEdge_Total = float(NumEdge_T[0])
     
     del NetREX_tmp
-    
+
+    print(NumEdge_Keep)
+
     # run NetREX
     RankGroup = np.zeros((len(NumEdge_Keep),1), dtype=np.ndarray)
     for i in range(len(NumEdge_Keep)):
         NetREX_Example = NetREX(args.expfile[0], args.priorfile[0])
         NetREX_Example.NumEdge_Keep(float(NumEdge_Keep[i]))
-        NetREX_Example.NumEdge_Total(float(NumEdge_Total))
+        NetREX_Example.NumEdge_Total(float(NumEdge_Total[0]))
         print("Setting %d: Keep %d edges in prior and add %d edges." % (i+1, int(NetREX_Example.KeepEdge), int(NetREX_Example.AddEdge)))
         NetREX_Example.NetREX_BootStrap()
         RankGroup[i][0] = copy.deepcopy(NetREX_Example.SRankFinal)
