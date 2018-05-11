@@ -7,7 +7,7 @@ from pandas import DataFrame
 import sys
 import argparse
 import warnings
-import progressbar
+import progressbar2
 
 # hide warnings
 warnings.filterwarnings('ignore')
