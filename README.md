@@ -1,3 +1,5 @@
+# [NEtREX](#netrex) and [PriorBoost](#priorboost)
+
 # NetREX
 A python tool to reconstruct a gene regulatory network given context-specific expression data and a prior network.
 
@@ -8,7 +10,7 @@ A python tool to reconstruct a gene regulatory network given context-specific ex
    $ pip install progressbar2
 ```
 
-## How to use
+## How to use?
 ### Default
 ```bash
 $ python ./NetREX.py -e express_file -p prior_file 
@@ -65,4 +67,12 @@ A Tab sepeated file with the first colomn stroing the gene names and the first r
 
 
 # PriorBoost
+A python tool to compare the explaination power of two different networks. Assume Net1 is the network obtained from a prior-based method and Net2 is a network obtained from a expression-based method. 
+## How to use?
+```bash
+$ python ./PriorBoost.py -e express_file -p Net1_file -b Net2_file 
 
+-e [expression file name] <Required> expression file format is explained above. 
+-p [Net1 file name] <Required> Net1 network file format is explained above. Elements in the Network are their ranks. rank 1 is the best.
+-b [Net2 file name] <Required> Net2 network file format is explained above. Elements is the weights of each edges. The larger the better.
+```   
