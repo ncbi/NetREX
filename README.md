@@ -1,4 +1,4 @@
-# [NEtREX](#netrex) and [PriorBoost](#priorboost)
+# [NetREX](#netrex) and [PriorBoost](#priorboost)
 
 # NetREX
 A python tool to reconstruct a gene regulatory network given context-specific expression data and a prior network.
