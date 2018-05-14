@@ -25,7 +25,7 @@ $ python ./NetREX.py -e express_file -p prior_file
 $ python ./NetREX.py -e express_file -p prior_file -k 0.6 0.7 0.8 -t 1.2
 
 -k [a list of percentages] (Optional)"0.6 0.7 0.8" means that NetREX would keep 60%, 70%, and 80% edges in the prior respectively. The final predicted network is the consensus based on networks predicted from those percentages.
--t [a ratio] (Optional)"1.2" means the number of  edges in the output network is 1.2 times to the edges in the prior network 
+-t [a ratio] (Optional)"1.2" means the number of  edges in the output network is 1.2 times to the edges in the prior network. 
 ``` 
 
 ## Output of NetREX
@@ -40,7 +40,7 @@ The rank of each edges will be outputed in "NetREX_PredictedEdgeList.txt" and "N
 
 
 ## Expression file format
-A Tab sepeated file with the first colomn stroing the gene names. For example:
+A Tab sepeated file with the first colomn stroing the gene names (E1, E2, ...). For example:
 
 | E1 | 0.2508 | 0.2684 | 0.2786 | 0.2878  | ... |
 |----|--------|--------|--------|---------|-----|
@@ -52,7 +52,7 @@ A Tab sepeated file with the first colomn stroing the gene names. For example:
 | E7 | 0.2866 | 0.3021 | 0.3105 | 00.3175 | ... |
 
 ## Prior file format
-A Tab sepeated file with the first colomn stroing the gene names and the first row stroing the TF names. For example:
+A Tab sepeated file with the first colomn stroing the gene names (E1, E2, ...) and the first row stroing the TF names (M1, M2, ...). The order of gene names in the prior file should be the same to the order in the expression data file. For example:
 
 |    | M1  | M2  | M3  |
 |----|-----|-----|-----|
