@@ -42,6 +42,10 @@ class NetREX:
         self.Genename = list(df.index)
         #self.ExpMat = np.matrix(df.values)
         TmpExp = np.matrix(copy.deepcopy(df.values))
+        RowSumTmpExp = np.sum(TmpExp, axis=1)
+        Ind0 = np.where(RowSumTmpExp==0.)[0]
+        if(Ind0.size>0):
+            sys.exit("Error: Genes %s's Expression has all zeros!!!" % (self.Genename[Ind0[0]]))
         for i in range(TmpExp.shape[1]):
             Range = np.max(TmpExp[:,i]) - np.min(TmpExp[:,i])
             TmpExp[:,i] = (TmpExp[:,i] - np.min(TmpExp[:,i])) / Range
